@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>The App Information</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+              <h1 class="logo">Alpha demo container</h1>
+              <strong><nav>
+                <ul class="menu">
+                  <li><a href="{{ url_for('apphome') }}">refrescar</a></li>
+                </ul>
+              </nav></strong>
+            </div>
+        </header>
+        <h2>App Information</h2>
+        {% for k, v in paras.items(): %}
+        <div class="container">
+            <div class="key">{{ k }} </div> <div class="value">{{ v }}</div>
+        </div>
+        {% endfor %}
+    </body>
+</html>
